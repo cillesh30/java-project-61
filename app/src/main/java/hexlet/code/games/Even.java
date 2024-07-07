@@ -1,4 +1,5 @@
-package hexlet.code;
+package hexlet.code.games;
+
 import java.util.Scanner;
 import java.util.Random;
 
