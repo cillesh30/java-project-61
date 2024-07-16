@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Cli;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -13,6 +14,7 @@ public class Engine {
                     "\n1 - Greet" +
                     "\n2 - Even" +
                     "\n3 - Calc" +
+                    "\n4 - GCD" +
                     "\n0 - Exit");
 
     Scanner scanner0 = new Scanner(System.in);
@@ -45,6 +47,12 @@ public class Engine {
             Cli.userName(scanner4);
             Calc.calcGame();
             break;
+
+        case 4:
+             Scanner scanner5 = new Scanner(System.in);
+             Cli.userName(scanner5);
+             GCD.gcdGame();
+             break;
 
         case 0:
             break;
