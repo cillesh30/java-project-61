@@ -45,6 +45,8 @@ public class Calc {
                 break;
             }
         }
-        System.out.println("Congratulations, " + cli.getName() + "!");
+        if (i == 3) {
+            System.out.println("Congratulations, " + cli.getName() + "!");
+        }
     }
 }
