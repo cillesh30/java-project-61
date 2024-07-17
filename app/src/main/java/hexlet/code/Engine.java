@@ -13,6 +13,7 @@ public class Engine {
                     "\n3 - Calc" +
                     "\n4 - GCD" +
                     "\n5 - Progression" +
+                    "\n6 - Prime" +
                     "\n0 - Exit");
 
     Scanner scanner0 = new Scanner(System.in);
@@ -56,6 +57,12 @@ public class Engine {
              Scanner scanner6 = new Scanner(System.in);
              Cli.userName(scanner6);
              Progression.progressionGame();
+             break;
+
+        case 6:
+             Scanner scanner7 = new Scanner(System.in);
+             Cli.userName(scanner7);
+             Prime.primeGame();
              break;
 
         case 0:
