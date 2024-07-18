@@ -7,10 +7,10 @@ public class Even {
     public static void evenGame() {
         Random random = new Random();
         int i = 0;
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         while (i <3) {
             int randomNumber = random.nextInt(1000) + 1;
-            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'." +
-                    "\nQuestion: " + randomNumber);
+            System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
             Scanner scanner2 = new Scanner(System.in);
             String answer = scanner2.nextLine();

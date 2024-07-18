@@ -32,7 +32,7 @@ public class Calc {
                 result = randomNumber1 * randomNumber2;
             }
 
-            System.out.println("Question: " + randomNumber1 + operate + randomNumber2);
+            System.out.println("Question: " + randomNumber1 + " " + operate + " " + randomNumber2);
             System.out.println("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             int answer = scanner.nextInt();
