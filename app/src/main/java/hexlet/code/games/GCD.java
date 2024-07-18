@@ -44,12 +44,14 @@ public class GCD {
             System.out.println("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             int answer = scanner.nextInt();
+            Cli cli = new Cli();
 
             if (answer == maxDivider) {
                 System.out.println("Correct!");
                 i = i + 1;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + maxDivider + "'.");
+                System.out.println("Let's try again, " + cli.getName() + "!");
                 break;
             }
 

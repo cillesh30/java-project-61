@@ -36,12 +36,14 @@ public class Progression {
             System.out.println("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             int answer = scanner.nextInt();
+            Cli cli = new Cli();
 
             if (answer == hiddenValueNumber) {
                 System.out.println("Correct!");
                 i = i + 1;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + hiddenValueNumber + "'.");
+                System.out.println("Let's try again, " + cli.getName() + "!");
                 break;
             }
         }

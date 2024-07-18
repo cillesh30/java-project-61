@@ -28,6 +28,7 @@ public class Prime {
             System.out.println("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             String answer = scanner.nextLine();
+            Cli cli = new Cli();
 
             if (answer.equals("yes") && rightAnswer.equals("yes")) {
                 System.out.println("Correct!");
@@ -37,9 +38,11 @@ public class Prime {
                 i = i + 1;
             } else if (answer.equals("yes") && rightAnswer.equals("no")) {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
+                System.out.println("Let's try again, " + cli.getName() + "!");
                 break;
             } else if (answer.equals("no") && rightAnswer.equals("yes")) {
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
+                System.out.println("Let's try again, " + cli.getName() + "!");
                 break;
             }
         }
