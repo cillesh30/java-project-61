@@ -4,14 +4,16 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Even {
+    private static final int GAME_COUNT = 3;
+    private static final int MAX_RANGE_DIGIT = 1000;
+
     public static void evenGame() {
         Random random = new Random();
         int i = 0;
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int gameCount = 3;
-        while (i < gameCount) {
-            int maxRangeDigit = 1000;
-            int randomNumber = random.nextInt(maxRangeDigit) + 1;
+
+        while (i < GAME_COUNT) {
+            int randomNumber = random.nextInt(MAX_RANGE_DIGIT) + 1;
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
             Scanner scanner2 = new Scanner(System.in);
@@ -38,7 +40,7 @@ public class Even {
         }
 
         Cli cli = new Cli();
-        if (i == gameCount) {
+        if (i == GAME_COUNT) {
             System.out.println("Congratulations, " + cli.getName() + "!");
         }
     }

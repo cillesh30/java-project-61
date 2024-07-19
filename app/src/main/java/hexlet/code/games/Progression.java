@@ -28,7 +28,7 @@ public class Progression {
             int hiddenValueNumber = array[hiddenItemNumber];
 
             String[] hiddenArray = new String[amountOfNumbers];
-            for (int k = 0; k < 10; k++) {
+            for (int k = 0; k < maxHiddenItemNumber; k++) {
                 hiddenArray[k] = String.valueOf(array[k]);
             }
             hiddenArray[hiddenItemNumber] = "..";
@@ -55,7 +55,8 @@ public class Progression {
                 System.out.println("Correct!");
                 i = i + 1;
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + hiddenValueNumber + "'.");
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
+                        + hiddenValueNumber + "'.");
                 System.out.println("Let's try again, " + cli.getName() + "!");
                 break;
             }
