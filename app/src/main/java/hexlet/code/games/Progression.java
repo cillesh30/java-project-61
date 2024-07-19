@@ -11,27 +11,37 @@ public class Progression {
         int i = 0;
         while (i < 3) {
             Random random = new Random();
-            int progressionStep = random.nextInt(15) + 1;
+            int progressionStep = random.nextInt(100) + 1;
             int firstNumber = random.nextInt(100) + 1;
 
-            int[] array = new int[9];
+            int[] array = new int[10];
             int j = 0;
             for (j = 0; j < array.length; j++) {
                 array[j] = firstNumber;
                 firstNumber = firstNumber + progressionStep;
             }
 
-            int hiddenItemNumber = random.nextInt(9);
+            int hiddenItemNumber = random.nextInt(10);
             int hiddenValueNumber = array[hiddenItemNumber];
 
-            String[] hiddenArray = new String[9];
-            for (int k = 0; k < 9; k++) {
+            String[] hiddenArray = new String[10];
+            for (int k = 0; k < 10; k++) {
                 hiddenArray[k] = String.valueOf(array[k]);
             }
             hiddenArray[hiddenItemNumber] = "..";
 
+            StringBuilder sb = new StringBuilder();
+            for (int m = 0; m < hiddenArray.length; m++) {
+                sb.append(hiddenArray[m]);
+
+                if (m < hiddenArray.length - 1) {
+                    sb.append(" ");
+                }
+            }
+            String result = sb.toString();
+
             System.out.println("What number is missing in the progression?\n" +
-                    "Question: " + Arrays.toString(hiddenArray));
+                    "Question: " + result);
 
             System.out.println("Your answer: ");
             Scanner scanner = new Scanner(System.in);
