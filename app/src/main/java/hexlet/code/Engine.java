@@ -1,17 +1,23 @@
 
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Cli;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int Greet = 1;
-    private static final int GAME_Even = 2;
+    private static final int GREET = 1;
+    private static final int GAME_EVEN = 2;
     private static final int GAME_CALC = 3;
     private static final int GAME_GCD = 4;
-    private static final int GAME_Progression = 5;
-    private static final int GAME_Prime = 6;
+    private static final int GAME_PROGRESSION = 5;
+    private static final int GAME_PRIME = 6;
     private static final int EXIT = 0;
 
     public static void gameEngine() {
@@ -29,13 +35,13 @@ public class Engine {
         Random random = new Random();
 
         switch (number) {
-            case Greet:
+            case GREET:
                 System.out.println("Welcome to the Brain Games!");
                 Scanner scanner2 = new Scanner(System.in);
                 Cli.userName(scanner2);
                 break;
 
-            case GAME_Even:
+            case GAME_EVEN:
                 Scanner scanner3 = new Scanner(System.in);
                 Cli.userName(scanner3);
                 Even.evenGame();
@@ -53,13 +59,13 @@ public class Engine {
                 GCD.gcdGame();
                 break;
 
-            case GAME_Progression:
+            case GAME_PROGRESSION:
                 Scanner scanner6 = new Scanner(System.in);
                 Cli.userName(scanner6);
                 Progression.progressionGame();
                 break;
 
-            case GAME_Prime:
+            case GAME_PRIME:
                 Scanner scanner7 = new Scanner(System.in);
                 Cli.userName(scanner7);
                 Prime.primeGame();
