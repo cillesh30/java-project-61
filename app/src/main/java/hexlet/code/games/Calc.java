@@ -28,7 +28,7 @@ public class Calc {
                 result = randomNumber1 + randomNumber2;
             } else if (operate == '-') {
                 result = randomNumber1 - randomNumber2;
-            } else if (operate == '*'){
+            } else if (operate == '*') {
                 result = randomNumber1 * randomNumber2;
             }
 
@@ -36,7 +36,7 @@ public class Calc {
             System.out.println("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             int answer = scanner.nextInt();
-            if (answer == result ) {
+            if (answer == result) {
                 System.out.println("Correct!");
                 i = i + 1;
             } else {

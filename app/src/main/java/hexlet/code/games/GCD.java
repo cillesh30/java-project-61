@@ -3,15 +3,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
-//    public static int minNumber() {
-//
-//
-//        Random random = new Random();
-//        int number1 = random.nextInt(100);
-//        int number2 = random.nextInt(100);
-//        int minNumber = Math.min(number1, number2);
-//    }
-
     public static void gcdGame() {
         int i = 0;
         while (i < 3) {
@@ -21,10 +12,8 @@ public class GCD {
             int minNumber = Math.min(number1, number2);
             int maxNumber = Math.max(number1, number2);
 
-            System.out.println("Find the greatest common divisor of given numbers." +
-                    "\nQuestion: " + number1 + " " + number2);
-
-//            int result = 0;
+            System.out.println("Find the greatest common divisor of given numbers."
+                    + "\nQuestion: " + number1 + " " + number2);
 
             int maxDivider = 1;
             for (int j = minNumber; j > 0; j = j - 1) {
@@ -33,13 +22,6 @@ public class GCD {
                     break;
                 }
             }
-
-//            while (maxDivider > 0) {
-//                if (maxNumber % maxDivider == 0 && minNumber % maxDivider == 0) {
-//                    break;
-//                } else
-//                    maxDivider = minNumber - 1;
-//            }
 
             System.out.println("Your answer: ");
             Scanner scanner = new Scanner(System.in);
@@ -55,7 +37,7 @@ public class GCD {
                 break;
             }
 
-            }
+        }
         if (i == 3) {
             Random random = new Random();
             Cli cli = new Cli();

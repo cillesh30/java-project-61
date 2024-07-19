@@ -8,7 +8,7 @@ public class Even {
         Random random = new Random();
         int i = 0;
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        while (i <3) {
+        while (i < 3) {
             int randomNumber = random.nextInt(1000) + 1;
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
@@ -36,7 +36,7 @@ public class Even {
         }
 
         Cli cli = new Cli();
-        if (i==3) {
+        if (i == 3) {
             System.out.println("Congratulations, " + cli.getName() + "!");
         }
     }

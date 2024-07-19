@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import java.sql.Array;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -40,8 +38,8 @@ public class Progression {
             }
             String result = sb.toString();
 
-            System.out.println("What number is missing in the progression?\n" +
-                    "Question: " + result);
+            System.out.println("What number is missing in the progression?\n"
+                    + "Question: " + result);
 
             System.out.println("Your answer: ");
             Scanner scanner = new Scanner(System.in);
