@@ -3,15 +3,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
+    private static final int GAME_COUNT = 3;
+    private static final int MAX_NUMBER_1 = 100;
+    private static final int MAX_NUMBER_2 = 100;
+
     public static void gcdGame() {
         int i = 0;
-        int gameCount = 3;
-        while (i < gameCount) {
+        while (i < GAME_COUNT) {
             Random random = new Random();
-            int maxNumber1 = 100;
-            int maxNumber2 = 100;
-            int number1 = random.nextInt(maxNumber1) + 1;
-            int number2 = random.nextInt(maxNumber2) + 1;
+            int number1 = random.nextInt(MAX_NUMBER_1) + 1;
+            int number2 = random.nextInt(MAX_NUMBER_2) + 1;
             int minNumber = Math.min(number1, number2);
             int maxNumber = Math.max(number1, number2);
 
@@ -41,7 +42,7 @@ public class GCD {
             }
 
         }
-        if (i == gameCount) {
+        if (i == GAME_COUNT) {
             Random random = new Random();
             Cli cli = new Cli();
             System.out.println("Congratulations, " + cli.getName() + "!");

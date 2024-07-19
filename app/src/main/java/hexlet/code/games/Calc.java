@@ -4,6 +4,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
+    private static final int GAME_COUNT = 3;
+    private static final int MAX_RANDOM_NUMBER_1 = 100;
+    private static final int MAX_RANDOM_NUMBER_2 = 100;
+
     public static char someOperate() {
         Random random = new Random();
         char[] operate = {'+', '-', '*'};
@@ -17,13 +21,9 @@ public class Calc {
         Random random = new Random();
         int i = 0;
         Cli cli = new Cli();
-
-        int gameCount = 3;
-        while (i < gameCount) {
-            int maxRandomNumber1 = 100;
-            int maxRandomNumber2 = 100;
-            int randomNumber1 = random.nextInt(maxRandomNumber1);
-            int randomNumber2 = random.nextInt(maxRandomNumber2);
+        while (i < GAME_COUNT) {
+            int randomNumber1 = random.nextInt(MAX_RANDOM_NUMBER_1);
+            int randomNumber2 = random.nextInt(MAX_RANDOM_NUMBER_2);
             int result = 0;
             char operate = someOperate();
 
@@ -48,7 +48,7 @@ public class Calc {
                 break;
             }
         }
-        if (i == gameCount) {
+        if (i == GAME_COUNT) {
             System.out.println("Congratulations, " + cli.getName() + "!");
         }
     }

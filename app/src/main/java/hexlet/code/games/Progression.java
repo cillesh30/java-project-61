@@ -3,32 +3,31 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class Progression {
+    private static final int GAME_CONT = 3;
+    private static final int MAX_PROGRESSION_STEP = 100;
+    private static final int MAX_FIRST_NUMBER = 100;
+    private static final int AMOUNT_OF_NUMBERS = 10;
+
     public static void progressionGame() {
         int i = 0;
-        int gameCount = 3;
-        while (i < gameCount) {
+        while (i < GAME_CONT) {
             Random random = new Random();
-            int maxProgressionStep = 100;
-            int maxFirstNumber = 100;
-            int progressionStep = random.nextInt(maxProgressionStep) + 1;
-            int firstNumber = random.nextInt(maxFirstNumber) + 1;
+            int progressionStep = random.nextInt(MAX_PROGRESSION_STEP) + 1;
+            int firstNumber = random.nextInt(MAX_FIRST_NUMBER) + 1;
 
-            int amountOfNumbers = 10;
-            int[] array = new int[amountOfNumbers];
+            int[] array = new int[AMOUNT_OF_NUMBERS];
             int j = 0;
             for (j = 0; j < array.length; j++) {
                 array[j] = firstNumber;
                 firstNumber = firstNumber + progressionStep;
             }
 
-            int maxHiddenItemNumber = 10;
-            int hiddenItemNumber = random.nextInt(maxHiddenItemNumber);
+            int hiddenItemNumber = random.nextInt(AMOUNT_OF_NUMBERS);
             int hiddenValueNumber = array[hiddenItemNumber];
 
-            String[] hiddenArray = new String[amountOfNumbers];
-            for (int k = 0; k < maxHiddenItemNumber; k++) {
+            String[] hiddenArray = new String[AMOUNT_OF_NUMBERS];
+            for (int k = 0; k < AMOUNT_OF_NUMBERS; k++) {
                 hiddenArray[k] = String.valueOf(array[k]);
             }
             hiddenArray[hiddenItemNumber] = "..";
@@ -61,7 +60,7 @@ public class Progression {
                 break;
             }
         }
-        if (i == gameCount) {
+        if (i == GAME_CONT) {
             Random random = new Random();
             Cli cli = new Cli();
             System.out.println("Congratulations, " + cli.getName() + "!");

@@ -4,13 +4,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
+    private static final int GAME_COUNT = 3;
+    private static final int MAX_RANDOM_NUMBER = 1000;
+
     public static void primeGame() {
         int i = 0;
-        int gameCount = 3;
-        while (i < gameCount) {
+        while (i < GAME_COUNT) {
             Random random = new Random();
-            int maxRandomNumber = 1000;
-            int randomNumber = random.nextInt(maxRandomNumber) + 1;
+            int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + 1;
 
             String rightAnswer = "yes";
             if (randomNumber <= 1) {
@@ -48,7 +49,7 @@ public class Prime {
                 break;
             }
         }
-        if (i == gameCount) {
+        if (i == GAME_COUNT) {
             Random random = new Random();
             Cli cli = new Cli();
             System.out.println("Congratulations, " + cli.getName() + "!");
