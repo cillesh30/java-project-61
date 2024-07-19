@@ -7,22 +7,27 @@ import java.util.Scanner;
 public class Progression {
     public static void progressionGame() {
         int i = 0;
-        while (i < 3) {
+        int gameCount = 3;
+        while (i < gameCount) {
             Random random = new Random();
-            int progressionStep = random.nextInt(100) + 1;
-            int firstNumber = random.nextInt(100) + 1;
+            int maxProgressionStep = 100;
+            int maxFirstNumber = 100;
+            int progressionStep = random.nextInt(maxProgressionStep) + 1;
+            int firstNumber = random.nextInt(maxFirstNumber) + 1;
 
-            int[] array = new int[10];
+            int amountOfNumbers = 10;
+            int[] array = new int[amountOfNumbers];
             int j = 0;
             for (j = 0; j < array.length; j++) {
                 array[j] = firstNumber;
                 firstNumber = firstNumber + progressionStep;
             }
 
-            int hiddenItemNumber = random.nextInt(10);
+            int maxHiddenItemNumber = 10;
+            int hiddenItemNumber = random.nextInt(maxHiddenItemNumber);
             int hiddenValueNumber = array[hiddenItemNumber];
 
-            String[] hiddenArray = new String[10];
+            String[] hiddenArray = new String[amountOfNumbers];
             for (int k = 0; k < 10; k++) {
                 hiddenArray[k] = String.valueOf(array[k]);
             }
@@ -55,7 +60,7 @@ public class Progression {
                 break;
             }
         }
-        if (i == 3) {
+        if (i == gameCount) {
             Random random = new Random();
             Cli cli = new Cli();
             System.out.println("Congratulations, " + cli.getName() + "!");

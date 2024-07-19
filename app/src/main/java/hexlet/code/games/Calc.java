@@ -18,9 +18,12 @@ public class Calc {
         int i = 0;
         Cli cli = new Cli();
 
-        while (i < 3) {
-            int randomNumber1 = random.nextInt(100);
-            int randomNumber2 = random.nextInt(100);
+        int gameCount = 3;
+        while (i < gameCount) {
+            int maxRandomNumber1 = 100;
+            int maxRandomNumber2 = 100;
+            int randomNumber1 = random.nextInt(maxRandomNumber1);
+            int randomNumber2 = random.nextInt(maxRandomNumber2);
             int result = 0;
             char operate = someOperate();
 
@@ -45,7 +48,7 @@ public class Calc {
                 break;
             }
         }
-        if (i == 3) {
+        if (i == gameCount) {
             System.out.println("Congratulations, " + cli.getName() + "!");
         }
     }

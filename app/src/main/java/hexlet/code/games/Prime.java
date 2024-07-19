@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class Prime {
     public static void primeGame() {
         int i = 0;
-        while (i < 3) {
+        int gameCount = 3;
+        while (i < gameCount) {
             Random random = new Random();
-            int randomNumber = random.nextInt(1000) + 1;
+            int maxRandomNumber = 1000;
+            int randomNumber = random.nextInt(maxRandomNumber) + 1;
 
             String rightAnswer = "yes";
             if (randomNumber <= 1) {
@@ -46,7 +48,7 @@ public class Prime {
                 break;
             }
         }
-        if (i == 3) {
+        if (i == gameCount) {
             Random random = new Random();
             Cli cli = new Cli();
             System.out.println("Congratulations, " + cli.getName() + "!");

@@ -8,8 +8,10 @@ public class Even {
         Random random = new Random();
         int i = 0;
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        while (i < 3) {
-            int randomNumber = random.nextInt(1000) + 1;
+        int gameCount = 3;
+        while (i < gameCount) {
+            int maxRangeDigit = 1000;
+            int randomNumber = random.nextInt(maxRangeDigit) + 1;
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
             Scanner scanner2 = new Scanner(System.in);
@@ -36,7 +38,7 @@ public class Even {
         }
 
         Cli cli = new Cli();
-        if (i == 3) {
+        if (i == gameCount) {
             System.out.println("Congratulations, " + cli.getName() + "!");
         }
     }
