@@ -7,7 +7,6 @@ import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-
 import java.util.Random;
 import java.util.Scanner;
 
