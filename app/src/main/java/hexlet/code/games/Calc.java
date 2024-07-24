@@ -1,7 +1,11 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class Calc {
     private static final int GAME_COUNT = 3;
@@ -15,12 +19,14 @@ public class Calc {
         return operate[index];
     }
 
+    public static Object[][] questionAndAnswerArray = new Object[GAME_COUNT][4];
+
     public static void calcGame() {
         System.out.println("What is the result of the expression?");
 
         Random random = new Random();
         int i = 0;
-        Cli cli = new Cli();
+
         while (i < GAME_COUNT) {
             int randomNumber1 = random.nextInt(MAX_RANDOM_NUMBER_1);
             int randomNumber2 = random.nextInt(MAX_RANDOM_NUMBER_2);
@@ -35,21 +41,13 @@ public class Calc {
                 result = randomNumber1 * randomNumber2;
             }
 
-            System.out.println("Question: " + randomNumber1 + " " + operate + " " + randomNumber2);
-            System.out.println("Your answer: ");
-            Scanner scanner = new Scanner(System.in);
-            int answer = scanner.nextInt();
-            if (answer == result) {
-                System.out.println("Correct!");
-                i = i + 1;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + result + "'.");
-                System.out.println("Let's try again, " + cli.getName() + "!");
-                break;
-            }
+            questionAndAnswerArray[i][0] = randomNumber1;
+            questionAndAnswerArray[i][1] = randomNumber2;
+            questionAndAnswerArray[i][2] = operate;
+            questionAndAnswerArray[i][3] = result;
+
         }
-        if (i == GAME_COUNT) {
-            System.out.println("Congratulations, " + cli.getName() + "!");
-        }
+        Engine.makeAnswers();
     }
+
 }
