@@ -8,7 +8,7 @@ public class Progression {
     private static final int MAX_PROGRESSION_STEP = 100;
     private static final int MAX_FIRST_NUMBER = 100;
     private static final int AMOUNT_OF_NUMBERS = 10;
-    public static Object[][] questionAndAnswerArray = new Object[GAME_CONT][2];
+    public static String[][] questionAndAnswerArray = new String[GAME_CONT][2];
 
     public static void progressionGame() {
         final var description = "What number is missing in the progression?";
@@ -27,6 +27,7 @@ public class Progression {
 
             int hiddenItemNumber = random.nextInt(AMOUNT_OF_NUMBERS);
             int hiddenValueNumber = array[hiddenItemNumber];
+            String stringHiddenValueNumber = Integer.toString(hiddenValueNumber);
 
             String[] hiddenArray = new String[AMOUNT_OF_NUMBERS];
             for (int k = 0; k < AMOUNT_OF_NUMBERS; k++) {
@@ -45,7 +46,7 @@ public class Progression {
             String result = sb.toString();
 
             questionAndAnswerArray[i][0] = result;
-            questionAndAnswerArray[i][1] = hiddenValueNumber;
+            questionAndAnswerArray[i][1] = stringHiddenValueNumber;
             i++;
         }
         Engine.makeAnswers(description, questionAndAnswerArray);

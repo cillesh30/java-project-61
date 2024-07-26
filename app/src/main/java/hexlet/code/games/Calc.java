@@ -15,7 +15,7 @@ public class Calc {
         return operate[index];
     }
 
-    public static Object[][] questionAndAnswerArray = new Object[GAME_COUNT][2];
+    public static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
 
     public static void calcGame() {
         final var description = "What is the result of the expression?";
@@ -37,8 +37,9 @@ public class Calc {
                 result = randomNumber1 * randomNumber2;
             }
 
+            String stringResult = Integer.toString(result);
             questionAndAnswerArray[i][0] = "Question: " + randomNumber1 + " " + operate + " " + randomNumber2;
-            questionAndAnswerArray[i][1] = result;
+            questionAndAnswerArray[i][1] = stringResult;
             i++;
 
         }

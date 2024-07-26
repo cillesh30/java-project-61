@@ -1,17 +1,21 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class Prime {
     private static final int GAME_COUNT = 3;
     private static final int MAX_RANDOM_NUMBER = 1000;
+    public static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
 
     public static void primeGame() {
+        final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         int i = 0;
         while (i < GAME_COUNT) {
             Random random = new Random();
             int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            String stringRandomNumber = Integer.toString(randomNumber);
 
             String rightAnswer = "yes";
             if (randomNumber <= 1) {
@@ -26,33 +30,11 @@ public class Prime {
                 }
             }
 
-            System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'."
-                    + "\nQuestion: " + randomNumber);
-            System.out.println("Your answer: ");
-            Scanner scanner = new Scanner(System.in);
-            String answer = scanner.nextLine();
-            Cli cli = new Cli();
+            questionAndAnswerArray[i][0] = stringRandomNumber;
+            questionAndAnswerArray[i][1] = rightAnswer;
+            i++;
 
-            if (answer.equals("yes") && rightAnswer.equals("yes")) {
-                System.out.println("Correct!");
-                i = i + 1;
-            } else if (answer.equals("no") && rightAnswer.equals("no")) {
-                System.out.println("Correct!");
-                i = i + 1;
-            } else if (answer.equals("yes") && rightAnswer.equals("no")) {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                System.out.println("Let's try again, " + cli.getName() + "!");
-                break;
-            } else if (answer.equals("no") && rightAnswer.equals("yes")) {
-                System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                System.out.println("Let's try again, " + cli.getName() + "!");
-                break;
-            }
-        }
-        if (i == GAME_COUNT) {
-            Random random = new Random();
-            Cli cli = new Cli();
-            System.out.println("Congratulations, " + cli.getName() + "!");
-        }
+        } Engine.makeAnswers(description, questionAndAnswerArray);
     }
 }
+

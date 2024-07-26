@@ -7,8 +7,6 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
-import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 
 public class App {
@@ -23,8 +21,8 @@ public class App {
     public static void main(String[] args) {
         App.gameMenu();
     }
-        public static void gameMenu() {
-            System.out.println("Please enter the game number and press Enter."
+    public static void gameMenu() {
+        System.out.println("Please enter the game number and press Enter."
                     + "\n1 - Greet"
                     + "\n2 - Even"
                     + "\n3 - Calc"
@@ -33,50 +31,41 @@ public class App {
                     + "\n6 - Prime"
                     + "\n0 - Exit");
 
-            Scanner scanner0 = new Scanner(System.in);
-            int number = scanner0.nextInt();
-            Random random = new Random();
+        Scanner scanner0 = new Scanner(System.in);
+        int number = scanner0.nextInt();
 
-            switch (number) {
-                case GREET:
-                    System.out.println("Welcome to the Brain Games!");
-                    Scanner scanner2 = new Scanner(System.in);
-                    Cli.userName(scanner2);
-                    break;
+        switch (number) {
+            case GREET:
+                System.out.println("Welcome to the Brain Games!");
+                Scanner scanner2 = new Scanner(System.in);
+                Cli.userName(scanner2);
+                break;
 
-                case GAME_EVEN:
-                    Scanner scanner3 = new Scanner(System.in);
-                    Cli.userName(scanner3);
-                    Even.evenGame();
-                    break;
+            case GAME_EVEN:
+                Even.evenGame();
+                break;
 
-                case GAME_CALC:
-                    Calc.calcGame();
-                    break;
+            case GAME_CALC:
+                Calc.calcGame();
+                break;
 
-                case GAME_GCD:
-                    GCD.gcdGame();
-                    break;
+            case GAME_GCD:
+                GCD.gcdGame();
+                break;
 
-                case GAME_PROGRESSION:
-                    Progression.progressionGame();
-                    break;
+            case GAME_PROGRESSION:
+                Progression.progressionGame();
+                break;
 
-                case GAME_PRIME:
-                    Scanner scanner7 = new Scanner(System.in);
-                    Cli.userName(scanner7);
-                    Prime.primeGame();
-                    break;
+            case GAME_PRIME:
+                Prime.primeGame();
+                break;
 
-                case EXIT:
-                    break;
+            case EXIT:
+                break;
 
-                default:
-                    System.out.println("Incorrect number, please enter right number");
-            }
+            default:
+                System.out.println("Incorrect number, please enter right number");
         }
     }
-
-
-
-
+}
