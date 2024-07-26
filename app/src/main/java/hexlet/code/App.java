@@ -51,14 +51,12 @@ public class App {
                     break;
 
                 case GAME_CALC:
-                    Scanner scanner4 = new Scanner(System.in);
-//                    Cli.userName(scanner4);
                     Calc.calcGame();
                     break;
 
                 case GAME_GCD:
-                    Scanner scanner5 = new Scanner(System.in);
-                    Cli.userName(scanner5);
+//                    Scanner scanner5 = new Scanner(System.in);
+//                    Cli.userName(scanner5);
                     GCD.gcdGame();
                     break;
 

@@ -14,10 +14,11 @@ import hexlet.code.games.Cli;
 import java.util.Scanner;
 import static hexlet.code.games.Calc.questionAndAnswerArray;
 
+
 public class Engine {
     private static final int GAME_COUNT = 3;
 
-    public static void makeAnswers(String description) {
+    public static void makeAnswers(String description, Object[][] questionAndAnswerArray) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Brain Games!");
@@ -28,20 +29,19 @@ public class Engine {
 
         int l = 0;
         while (l < GAME_COUNT) {
-        System.out.println("Question: " + questionAndAnswerArray[l][0] + " " + questionAndAnswerArray[l][2]  + " " + questionAndAnswerArray[l][1]);
+//        System.out.println("Question: " + questionAndAnswerArray[l][0] + " " + questionAndAnswerArray[l][2]  + " " + questionAndAnswerArray[l][1]);
+        System.out.println(questionAndAnswerArray[l][0]);
         System.out.println("Your answer: ");
         Scanner scanner2 = new Scanner(System.in);
         int answer = scanner2.nextInt();
-        Object obj = questionAndAnswerArray[l][3];
+        Object obj = questionAndAnswerArray[l][1];
         int elementValue = ((Number) obj).intValue();
-            System.out.println(elementValue);
 
         if (answer == elementValue) {
             System.out.println("Correct!");
             l = l + 1;
 
         } else {
-//            Cli cli = new Cli();
             System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + elementValue + "'.");
             System.out.println("Let's try again, " + userName + "!");
             break;
