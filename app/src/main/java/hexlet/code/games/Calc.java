@@ -22,7 +22,7 @@ public class Calc {
     public static Object[][] questionAndAnswerArray = new Object[GAME_COUNT][4];
 
     public static void calcGame() {
-        System.out.println("What is the result of the expression?");
+        final var description = "What is the result of the expression?";
 
         Random random = new Random();
         int i = 0;
@@ -45,9 +45,10 @@ public class Calc {
             questionAndAnswerArray[i][1] = randomNumber2;
             questionAndAnswerArray[i][2] = operate;
             questionAndAnswerArray[i][3] = result;
+            i++;
 
         }
-        Engine.makeAnswers();
+        Engine.makeAnswers(description);
     }
 
 }

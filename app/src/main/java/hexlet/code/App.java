@@ -52,7 +52,7 @@ public class App {
 
                 case GAME_CALC:
                     Scanner scanner4 = new Scanner(System.in);
-                    Cli.userName(scanner4);
+//                    Cli.userName(scanner4);
                     Calc.calcGame();
                     break;
 
