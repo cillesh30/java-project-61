@@ -29,7 +29,6 @@ public class Engine {
 
         int l = 0;
         while (l < GAME_COUNT) {
-//        System.out.println("Question: " + questionAndAnswerArray[l][0] + " " + questionAndAnswerArray[l][2]  + " " + questionAndAnswerArray[l][1]);
         System.out.println(questionAndAnswerArray[l][0]);
         System.out.println("Your answer: ");
         Scanner scanner2 = new Scanner(System.in);

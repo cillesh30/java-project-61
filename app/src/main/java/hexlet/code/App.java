@@ -55,14 +55,10 @@ public class App {
                     break;
 
                 case GAME_GCD:
-//                    Scanner scanner5 = new Scanner(System.in);
-//                    Cli.userName(scanner5);
                     GCD.gcdGame();
                     break;
 
                 case GAME_PROGRESSION:
-                    Scanner scanner6 = new Scanner(System.in);
-                    Cli.userName(scanner6);
                     Progression.progressionGame();
                     break;
 
