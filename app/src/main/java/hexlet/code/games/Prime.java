@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import java.util.Random;
 
-
 public class Prime {
     private static final int GAME_COUNT = 3;
     private static final int MAX_RANDOM_NUMBER = 1000;
@@ -30,7 +29,7 @@ public class Prime {
                 }
             }
 
-            questionAndAnswerArray[i][0] = stringRandomNumber;
+            questionAndAnswerArray[i][0] = "Question: " + stringRandomNumber;
             questionAndAnswerArray[i][1] = rightAnswer;
             i++;
 

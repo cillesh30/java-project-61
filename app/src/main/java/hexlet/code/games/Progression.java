@@ -45,7 +45,7 @@ public class Progression {
             }
             String result = sb.toString();
 
-            questionAndAnswerArray[i][0] = result;
+            questionAndAnswerArray[i][0] = "Question: " + result;
             questionAndAnswerArray[i][1] = stringHiddenValueNumber;
             i++;
         }

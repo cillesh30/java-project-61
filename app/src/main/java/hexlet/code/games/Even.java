@@ -24,7 +24,7 @@ public class Even {
                 result = "no";
             }
 
-            questionAndAnswerArray[i][0] = stringRandomNumber;
+            questionAndAnswerArray[i][0] = "Question: " + stringRandomNumber;
             questionAndAnswerArray[i][1] = result;
             i++;
         }
