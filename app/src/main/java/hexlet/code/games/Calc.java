@@ -7,6 +7,11 @@ public class Calc {
     private static final int GAME_COUNT = 3;
     private static final int MAX_RANDOM_NUMBER_1 = 100;
     private static final int MAX_RANDOM_NUMBER_2 = 100;
+    private static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
+
+    public static String[][] getQuestionAndAnswerArray() {
+        return questionAndAnswerArray;
+    }
 
     public static char someOperate() {
         Random random = new Random();
@@ -14,8 +19,6 @@ public class Calc {
         int index = random.nextInt(operate.length);
         return operate[index];
     }
-
-    public static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
 
     public static void calcGame() {
         final var description = "What is the result of the expression?";
@@ -43,6 +46,6 @@ public class Calc {
             i++;
 
         }
-        Engine.makeAnswers(description, questionAndAnswerArray);
+        Engine.makeAnswers(description, getQuestionAndAnswerArray());
     }
 }
