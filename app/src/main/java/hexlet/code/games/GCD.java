@@ -7,8 +7,11 @@ public class GCD {
     private static final int GAME_COUNT = 3;
     private static final int MAX_NUMBER_1 = 100;
     private static final int MAX_NUMBER_2 = 100;
+    private static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
 
-    public static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
+    public static String[][] getQuestionAndAnswerArray() {
+        return questionAndAnswerArray;
+    }
 
     public static void gcdGame() {
         final var description = "Find the greatest common divisor of given numbers.";
@@ -34,6 +37,6 @@ public class GCD {
             questionAndAnswerArray[i][1] = stringMaxDivider;
             i++;
         }
-        Engine.makeAnswers(description, questionAndAnswerArray);
+        Engine.makeAnswers(description, getQuestionAndAnswerArray());
     }
 }

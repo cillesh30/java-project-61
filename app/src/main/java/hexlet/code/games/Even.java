@@ -6,7 +6,11 @@ import java.util.Random;
 public class Even {
     private static final int GAME_COUNT = 3;
     private static final int MAX_RANGE_DIGIT = 1000;
-    public static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
+    private static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
+
+    public static String[][] getQuestionAndAnswerArray() {
+        return questionAndAnswerArray;
+    }
 
     public static void evenGame() {
         final var description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
@@ -28,6 +32,6 @@ public class Even {
             questionAndAnswerArray[i][1] = result;
             i++;
         }
-        Engine.makeAnswers(description, questionAndAnswerArray);
+        Engine.makeAnswers(description, getQuestionAndAnswerArray());
     }
 }

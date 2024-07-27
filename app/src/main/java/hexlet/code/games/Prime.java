@@ -6,7 +6,11 @@ import java.util.Random;
 public class Prime {
     private static final int GAME_COUNT = 3;
     private static final int MAX_RANDOM_NUMBER = 1000;
-    public static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
+    private static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
+
+    public static String[][] getQuestionAndAnswerArray() {
+        return questionAndAnswerArray;
+    }
 
     public static void primeGame() {
         final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -33,7 +37,7 @@ public class Prime {
             questionAndAnswerArray[i][1] = rightAnswer;
             i++;
 
-        } Engine.makeAnswers(description, questionAndAnswerArray);
+        } Engine.makeAnswers(description, getQuestionAndAnswerArray());
     }
 }
 
