@@ -23,14 +23,12 @@ public class Calc {
     public static int someNumber1() {
         Random random = new Random();
         int randomNumber1 = random.nextInt(MAX_RANDOM_NUMBER_1);
-//
         return randomNumber1;
     }
 
     public static int someNumber2() {
         Random random = new Random();
         int randomNumber2 = random.nextInt(MAX_RANDOM_NUMBER_2);
-//        String StringRandomNumber2 = Integer.toString(randomNumber2);
         return randomNumber2;
     }
 

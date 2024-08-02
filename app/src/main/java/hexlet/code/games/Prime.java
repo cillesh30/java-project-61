@@ -12,26 +12,36 @@ public class Prime {
         return questionAndAnswerArray;
     }
 
+    public static int someNumber() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+
+        return randomNumber;
+    }
+
+    public static String definitionPrime() {
+        int randomNumber = someNumber();
+        String rightAnswer = "yes";
+        if (randomNumber <= 1) {
+            rightAnswer = "no";
+        } else {
+            for (int k = 2; k <= Math.sqrt(randomNumber); k++) {
+                if (randomNumber % k == 0) {
+                    rightAnswer = "no";
+                    break;
+                }
+            }
+        }
+        return rightAnswer;
+    }
+
     public static void primeGame() {
         final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         int i = 0;
         while (i < GAME_COUNT) {
-            Random random = new Random();
-            int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            int randomNumber = someNumber();
+            String rightAnswer = definitionPrime();
             String stringRandomNumber = Integer.toString(randomNumber);
-
-            String rightAnswer = "yes";
-            if (randomNumber <= 1) {
-                rightAnswer = "no";
-                break;
-            } else {
-                for (int k = 2; k <= Math.sqrt(randomNumber); k++) {
-                    if (randomNumber % k == 0) {
-                        rightAnswer = "no";
-                        break;
-                    }
-                }
-            }
 
             questionAndAnswerArray[i][0] = "Question: " + stringRandomNumber;
             questionAndAnswerArray[i][1] = rightAnswer;

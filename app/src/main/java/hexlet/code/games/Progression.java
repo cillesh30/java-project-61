@@ -14,20 +14,26 @@ public class Progression {
         return questionAndAnswerArray;
     }
 
+    public static int[] progressionCalculation() {
+        Random random = new Random();
+        int progressionStep = random.nextInt(MAX_PROGRESSION_STEP) + 1;
+        int firstNumber = random.nextInt(MAX_FIRST_NUMBER) + 1;
+
+        int[] array = new int[AMOUNT_OF_NUMBERS];
+        int j = 0;
+        for (j = 0; j < array.length; j++) {
+            array[j] = firstNumber;
+            firstNumber = firstNumber + progressionStep;
+        }
+        return array;
+    }
+
     public static void progressionGame() {
         final var description = "What number is missing in the progression?";
         int i = 0;
         while (i < GAME_CONT) {
             Random random = new Random();
-            int progressionStep = random.nextInt(MAX_PROGRESSION_STEP) + 1;
-            int firstNumber = random.nextInt(MAX_FIRST_NUMBER) + 1;
-
-            int[] array = new int[AMOUNT_OF_NUMBERS];
-            int j = 0;
-            for (j = 0; j < array.length; j++) {
-                array[j] = firstNumber;
-                firstNumber = firstNumber + progressionStep;
-            }
+            int[] array = progressionCalculation();
 
             int hiddenItemNumber = random.nextInt(AMOUNT_OF_NUMBERS);
             int hiddenValueNumber = array[hiddenItemNumber];
