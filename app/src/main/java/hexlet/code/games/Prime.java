@@ -12,7 +12,7 @@ public class Prime {
         return questionAndAnswerArray;
     }
 
-    public static String definitionPrime(boolean numberOrAnswer) {
+    public static String[] definitionPrime() {
         Random random = new Random();
         int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + 1;
         String stringRandomNumber = Integer.toString(randomNumber);
@@ -28,18 +28,17 @@ public class Prime {
                 }
             }
         }
-        return numberOrAnswer ? stringRandomNumber : rightAnswer;
+        return new String[]{stringRandomNumber, rightAnswer};
     }
 
     public static void primeGame() {
         final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         int i = 0;
         while (i < GAME_COUNT) {
-            String stringRandomNumber = definitionPrime(true);
-            String rightAnswer = definitionPrime(false);
+            String[] questionAndAnswer = definitionPrime();
 
-            questionAndAnswerArray[i][0] = "Question: " + stringRandomNumber;
-            questionAndAnswerArray[i][1] = rightAnswer;
+            questionAndAnswerArray[i][0] = "Question: " + questionAndAnswer[0];
+            questionAndAnswerArray[i][1] = questionAndAnswer[1];
             i++;
 
         } Engine.makeAnswers(description, getQuestionAndAnswerArray());
