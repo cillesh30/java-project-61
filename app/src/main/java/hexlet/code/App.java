@@ -65,7 +65,7 @@ public class App {
             default:
                 System.out.println("Incorrect number, please enter right number");
         }
-        if (number < 0 || number > 9) {
+        if (number < 0 || number > GAME_PRIME) {
             throw new RuntimeException("Unknown user choice - " + number);
         }
     }
