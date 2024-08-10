@@ -16,12 +16,12 @@ public class Engine {
         System.out.println(description);
 
         int l = 0;
-        while (l < GAME_COUNT) {
-            System.out.println(questionAndAnswerArray[l][0]);
+        for (String[] someString : questionAndAnswerArray) {
+            System.out.println("Question: " + questionAndAnswerArray[l][0]);
             System.out.println("Your answer: ");
             Scanner scanner2 = new Scanner(System.in);
             String answer = scanner2.nextLine();
-            String elementValue = questionAndAnswerArray[l][1];
+            String elementValue = someString[1];
 
             if (answer.equals(elementValue)) {
                 System.out.println("Correct!");
@@ -34,9 +34,9 @@ public class Engine {
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
-        }
-        if (l == GAME_COUNT) {
-            System.out.println("Congratulations, " + userName + "!");
+            if (l == GAME_COUNT) {
+                System.out.println("Congratulations, " + userName + "!");
+            }
         }
     }
 }

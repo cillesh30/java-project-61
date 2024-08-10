@@ -1,64 +1,48 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 import java.util.Random;
 
 public class Progression {
     private static final int GAME_CONT = 3;
+    private static final int MIN_NUMBER = 1;
     private static final int MAX_PROGRESSION_STEP = 100;
     private static final int MAX_FIRST_NUMBER = 100;
-    private static final int AMOUNT_OF_NUMBERS = 10;
-    private static String[][] questionAndAnswerArray = new String[GAME_CONT][2];
+    private static final int PROGRESSION_LENGTH = 10;
 
-    public static String[][] getQuestionAndAnswerArray() {
-        return questionAndAnswerArray;
-    }
+    private static String[] makeProgression(int first, int step, int length) {
+        String[] progression = new String[length];
 
-    public static int[] progressionCalculation() {
-        Random random = new Random();
-        int progressionStep = random.nextInt(MAX_PROGRESSION_STEP) + 1;
-        int firstNumber = random.nextInt(MAX_FIRST_NUMBER) + 1;
-
-        int[] array = new int[AMOUNT_OF_NUMBERS];
-        int j = 0;
-        for (j = 0; j < array.length; j++) {
-            array[j] = firstNumber;
-            firstNumber = firstNumber + progressionStep;
+        for (int i = 0; i < length; i += 1) {
+            progression[i] = Integer.toString(first + i * step);
         }
-        return array;
+
+        return progression;
     }
 
     public static void progressionGame() {
+        String[][] questionAndAnswer = new String[GAME_CONT][2];
         final var description = "What number is missing in the progression?";
         int i = 0;
         while (i < GAME_CONT) {
             Random random = new Random();
-            int[] array = progressionCalculation();
+            int step = Utils.generateNumber(MIN_NUMBER, MAX_PROGRESSION_STEP);
+            int first = Utils.generateNumber(MIN_NUMBER, MAX_FIRST_NUMBER);
+            String[] array = makeProgression(first, step, PROGRESSION_LENGTH);
 
-            int hiddenItemNumber = random.nextInt(AMOUNT_OF_NUMBERS);
-            int hiddenValueNumber = array[hiddenItemNumber];
-            String stringHiddenValueNumber = Integer.toString(hiddenValueNumber);
+            int hiddenItemNumber = random.nextInt(PROGRESSION_LENGTH);
 
-            String[] hiddenArray = new String[AMOUNT_OF_NUMBERS];
-            for (int k = 0; k < AMOUNT_OF_NUMBERS; k++) {
-                hiddenArray[k] = String.valueOf(array[k]);
-            }
-            hiddenArray[hiddenItemNumber] = "..";
+            String[] progression = makeProgression(first, step, PROGRESSION_LENGTH);
+            String answer = progression[hiddenItemNumber];
 
-            StringBuilder sb = new StringBuilder();
-            for (int m = 0; m < hiddenArray.length; m++) {
-                sb.append(hiddenArray[m]);
+            progression[hiddenItemNumber] = "..";
+            String question = String.join(" ", progression);
 
-                if (m < hiddenArray.length - 1) {
-                    sb.append(" ");
-                }
-            }
-            String result = sb.toString();
-
-            questionAndAnswerArray[i][0] = "Question: " + result;
-            questionAndAnswerArray[i][1] = stringHiddenValueNumber;
+            questionAndAnswer[i][0] = question;
+            questionAndAnswer[i][1] = answer;
             i++;
         }
-        Engine.makeAnswers(description, getQuestionAndAnswerArray());
+        Engine.makeAnswers(description, questionAndAnswer);
     }
 }

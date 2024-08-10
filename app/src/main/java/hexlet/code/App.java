@@ -1,12 +1,10 @@
 package hexlet.code;
 
 import hexlet.code.games.Calc;
-import hexlet.code.games.Cli;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-
 import java.util.Scanner;
 
 public class App {
@@ -66,6 +64,9 @@ public class App {
 
             default:
                 System.out.println("Incorrect number, please enter right number");
+        }
+        if (number < 0 || number > 9) {
+            throw new RuntimeException("Unknown user choice - " + number);
         }
     }
 }

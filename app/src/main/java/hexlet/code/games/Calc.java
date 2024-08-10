@@ -1,17 +1,14 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 import java.util.Random;
 
 public class Calc {
     private static final int GAME_COUNT = 3;
-    private static final int MAX_RANDOM_NUMBER_1 = 100;
-    private static final int MAX_RANDOM_NUMBER_2 = 100;
-    private static String[][] questionAndAnswerArray = new String[GAME_COUNT][2];
-
-    public static String[][] getQuestionAndAnswerArray() {
-        return questionAndAnswerArray;
-    }
+    private static final int MIN_RANDOM_NUMBER = 0;
+    private static final int MAX_RANDOM_NUMBER = 100;
 
     public static char someOperate() {
         Random random = new Random();
@@ -21,14 +18,12 @@ public class Calc {
     }
 
     public static int someNumber1() {
-        Random random = new Random();
-        int randomNumber1 = random.nextInt(MAX_RANDOM_NUMBER_1);
+        int randomNumber1 = Utils.generateNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         return randomNumber1;
     }
 
     public static int someNumber2() {
-        Random random = new Random();
-        int randomNumber2 = random.nextInt(MAX_RANDOM_NUMBER_2);
+        int randomNumber2 = Utils.generateNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
         return randomNumber2;
     }
 
@@ -46,7 +41,8 @@ public class Calc {
         return stringResult;
     }
 
-    public static void createArray() {
+    public static void createQuestionAnswer() {
+        String[][] questionAndAnswer = new String[GAME_COUNT][2];
         final var description = "What is the result of the expression?";
         int i = 0;
         while (i < GAME_COUNT) {
@@ -57,20 +53,18 @@ public class Calc {
             char operate = someOperate();
 
             String stringResult = calculate(randomNumber1, randomNumber2, operate);
-            questionAndAnswerArray[i][0] = "Question: "
-                    + stringRandomNumber1
+            questionAndAnswer[i][0] = stringRandomNumber1
                     + " "
                     + operate
                     + " "
                     + stringRandomNumber2;
-            questionAndAnswerArray[i][1] = stringResult;
+            questionAndAnswer[i][1] = stringResult;
             i++;
-
         }
-        Engine.makeAnswers(description, getQuestionAndAnswerArray());
+        Engine.makeAnswers(description, questionAndAnswer);
     }
 
     public static void calcGame() {
-        Calc.createArray();
+        Calc.createQuestionAnswer();
     }
 }
