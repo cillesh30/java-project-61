@@ -16,7 +16,7 @@ public class GCD {
         return min ? minNumber : maxNumber;
     }
 
-    public static String maxDivider(int minNumber, int maxNumber) {
+    public static int maxDivider(int minNumber, int maxNumber) {
         int maxDivider = 1;
         for (int j = minNumber; j > 0; j = j - 1) {
             if (maxNumber % j == 0 && minNumber % j == 0) {
@@ -24,8 +24,7 @@ public class GCD {
                 break;
             }
         }
-        String stringMaxDivider = Integer.toString(maxDivider);
-        return stringMaxDivider;
+        return maxDivider;
     }
 
     public static void gcdGame() {
@@ -38,9 +37,11 @@ public class GCD {
 
             String stringMinNumber = Integer.toString(minNumber);
             String stringMaxNumber = Integer.toString(maxNumber);
+            int maxDivider = maxDivider(minNumber, maxNumber);
+            String stringMaxDivider = Integer.toString(maxDivider);
 
             questionAndAnswer[i][0] = stringMinNumber + " " + stringMaxNumber;
-            questionAndAnswer[i][1] = maxDivider(minNumber, maxNumber);
+            questionAndAnswer[i][1] = stringMaxDivider;
             i++;
         }
         Engine.makeAnswers(description, questionAndAnswer);

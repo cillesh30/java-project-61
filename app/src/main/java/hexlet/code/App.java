@@ -63,10 +63,10 @@ public class App {
                 break;
 
             default:
-                System.out.println("Incorrect number, please enter right number");
+                System.out.println("Incorrect number, please enter right number " + number);
         }
-        if (number < 0 || number > GAME_PRIME) {
-            throw new RuntimeException("Unknown user choice - " + number);
-        }
+//        if (number < 0 || number > GAME_PRIME) {
+//            throw new RuntimeException("Unknown user choice - " + number);
+//        }
     }
 }

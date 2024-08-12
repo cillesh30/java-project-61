@@ -32,11 +32,9 @@ public class Engine {
                         + elementValue
                         + "'.");
                 System.out.println("Let's try again, " + userName + "!");
-                break;
+                return;
             }
-            if (l == GAME_COUNT) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            System.out.println("Congratulations, " + userName + "!");
         }
     }
 }
