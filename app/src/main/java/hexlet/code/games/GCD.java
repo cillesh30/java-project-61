@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 public class GCD {
     private static final int GAME_COUNT = 3;
-    private static final int MIN_NUMBER = 0;
+    private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 100;
 
     public static int maxDivider(int minNumber, int maxNumber) {
